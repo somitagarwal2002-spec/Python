@@ -1,0 +1,46 @@
+<!-- Inline CSS -->
+<!-- jb hume kisi particular kisi ek element mein changes krne honge -->
+
+<html style="background: blue">   
+</html> <!-- "background" is known as property
+             "blue" is known as value -->
+
+
+
+<!-- Internal CSS -->
+<!-- jb hume singular web page ko style krna hota hai -->
+<html>
+    <head>
+        <style> 
+            html{ 
+                background: red; 
+            } 
+        </style>
+    </head>
+</html>
+
+<!-- yha pr humne jo style tag ke andar html likha hai use hum "selector" kehte hai jispe jo style apply hoga
+     aur kya-kya hoga ye humne curly brackets mein likh diya hai -->
+
+
+<!-- Extternal CSS -->
+
+<!-- jb hume multiple pages pr same style use krni hoti hai to hum external ek file mein css likh dete
+     hai jisse hum sabhi pages mein uss style ko link kr denge like "style.css" -->
+
+<!-- HTML File -->
+
+<html>
+    <head>
+        <link rel="stylesheet"
+              href="./style.css"
+              >
+    </head>
+</html>
+
+<!-- CSS File -->
+
+html{
+    background: green;
+}
+
