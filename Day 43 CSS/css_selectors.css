@@ -1,0 +1,49 @@
+/*  Element Selector */
+/* jitne bhi elements use hue honge hrr jagah ye styling apply ho jayengi */
+h1{
+    color: red;
+}
+p{
+    color: blue;
+}
+
+/* Class Selector */
+/* jitne bhi elements ki same class hogi wo styling uss uss pr ho jayega */
+/* class is an attribute which can be add to any element */
+/* e.g. <h2 class="abc"> Hello </h2> */
+
+.class_name{
+    color: red;
+}
+
+/* ID Selector */
+/* hrr element ki id unique hoti hai  */
+/* jaise maan do h2 tags hai but hume keval ek hi color change krne hai to id selector ka useful */
+
+#id_name{
+    color: greenyellow;
+}
+
+
+/* Attribute Selector */
+/* jaise ki humne class aur id ke liye kiya hum aur baaki jo bhi attributes hai unke liye bhi kr skte hai */
+
+p[draggable]{
+    color: black;
+}
+
+p[draggable="false"]{
+    color: aqua;
+}
+
+a[href]{
+    color: blueviolet;
+}
+
+/* Universal Selector */
+/* this will apply styling to all the elements of the html file */
+
+*{
+    color: deeppink;
+}
+
