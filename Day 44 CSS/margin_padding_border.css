@@ -1,5 +1,5 @@
-/* height = 100px
-width = 200px
+/* height = 100px;
+width = 200px;
 
 height = 100% poori screen ki height cover depends on the width too
 width = 100% poori screen ki width cover depends on the height too 
@@ -10,7 +10,7 @@ width = 100% poori screen ki width cover depends on the height too
 
 *************************************** Border ********************************************************
 
-border:10px solid black
+border:10px solid black;
 
 kisi image ya kisi cheez ko border dene ke liye use hota hai
 
@@ -20,9 +20,9 @@ black - color of the border that can be red, green, blue, yellow, etc.
 
 isme bhi aur aage categories ban sakti hai jaise
 
-border:10px solid black
-    border-top:0px isse top nhi hoga border baki teeno sides mein border hoga
-    border-width:0px 10px 20px 30px     isse charo side ki alag alag width hogi top ki 0, right ki 10,
+border:10px solid black;
+    border-top:0px; isse top nhi hoga border baki teeno sides mein border hoga
+    border-width:0px 10px 20px 30px;     isse charo side ki alag alag width hogi top ki 0, right ki 10,
                                         bottom ki 20 aur left side ki 30px
     
 
@@ -35,7 +35,7 @@ border:10px solid black
 padding se hum kisi fixed box (like image) aur border ke beech mein jagah de skte hai but ye baat dhyan
 rakhna ki box ki size (height and width) aur border ki widths change nhi hongi
 
-padding:20px
+padding:20px;
 
 jo bhi humne border ke liye padha hai jaise border-width aur border-top wo padding mein bhi same use
 kr skte hai bss border ki jagah padding likh kr
