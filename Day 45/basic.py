@@ -14,6 +14,7 @@ soup = BeautifulSoup(web.content, "html.parser")
 print(soup.prettify()) # ye humare html code ko html tree mein ache se show krega
 
 print(soup.title) # tab mein jo naam likha hota hai wo isse likh ke aa jayega, it includes title tag too i.e <title>
+print(soup.title.text)
 
 print(soup.p) # first jo paragraph tag aayega wo show hoga with <p> tag
 
