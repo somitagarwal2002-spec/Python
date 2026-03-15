@@ -23,14 +23,14 @@ for m in range(0, len(movie)):
 # for m in movie:
 #     names.append(m.get_text(strip=True))
 
+
+# Reversing List
+# Method 1
 names = names[::-1]
+
+# Method 2
+# for n in range(len(names) - 1, -1, -1):
+        # print(names[n])
 
 for name in range(0, len(names)):
     print(f"{name + 1}: {names[name]}")
-
-
-
-    
-
-
-
