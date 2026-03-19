@@ -47,20 +47,3 @@ while len(guessed_state) < 50:
         state_data = data[data.state == answer_state]
         t.goto(state_data.x.item(), state_data.y.item())
         t.write(state_data.state.item()) # OR t.write(answer_state)
-
-
-count = 0
-screen.exitonclick()
-# def correct_guess():
-#     count += 1
-#     answer_state = screen.textinput(title=f"{count}/50 states correct", prompt="What's another state's name").capitalize()
-
-# for i in range(0, 100):
-#     if answer_state in data["state"]:
-#         count += 1
-#         answer_state = screen.textinput(title=f"{count}/50 states correct", prompt="What's another state's name").capitalize()      
-#     else:
-#         answer_state = screen.textinput(title=f"{count}/50 states correct", prompt="What's another state's name").capitalize()
-
-
-
