@@ -29,3 +29,9 @@ with open("Day 24/my_file.txt", mode="a") as file: # mode="a" means appned
     file.write("\nNew Text.")
 
 
+
+# Iss method se jo bhi humari file ka data hoga wo list mein save ho jayega
+with open("Day 24/my_file.txt") as file:
+    lists = file.readlines()
+    print(contents)
+
