@@ -3,11 +3,11 @@ import requests
 import smtplib
 
 URL = "https://appbrewery.github.io/instant_pot/"
-MY_EMAIL = "somitprogramming@gmail.com"
-PASSWORD = "csohdvmtpfnlcscr"
+MY_EMAIL = "my_email"
+PASSWORD = "my_password"
 
 headers = {
-    "User-Agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "User-Agent":"my_user_agent",
     "Accept-Language":"en-US"
 }
 
