@@ -12,8 +12,8 @@ if day_of_today == 5:
 
     print(quote)
 
-    my_email = "somitprogramming@gmail.com"
-    password = "csohdvmtpfnlcscr"
+    my_email = "my_email"
+    password = "my_password"
     with smtplib.SMTP("smtp.gmail.com", 587) as connection:
         connection.starttls()
         connection.login(user=my_email, password=password)

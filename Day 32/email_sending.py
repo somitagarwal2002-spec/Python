@@ -1,7 +1,7 @@
 import smtplib
 
-my_email = "somitprogramming@gmail.com"
-password = "csohdvmtpfnlcscr"
+my_email = "my_email"
+password = "my_password"
 
 with smtplib.SMTP("smtp.gmail.com", 587) as connection:
     connection.starttls()
@@ -13,4 +13,5 @@ with smtplib.SMTP("smtp.gmail.com", 587) as connection:
         )
 
 # connection.close() ise hume tb likhna hota jb humne with ke sath nhi likha hota connection ko
+
 

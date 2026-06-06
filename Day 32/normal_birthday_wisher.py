@@ -1,8 +1,8 @@
 import smtplib
 import datetime as dt
 
-my_email = "somitprogramming@gmail.com"
-password = "csohdvmtpfnlcscr"
+my_email = "my_email"
+password = "my_password"
 
 dob = dt.datetime(year=2002, month=8, day=3)
 now = dt.datetime.now()
