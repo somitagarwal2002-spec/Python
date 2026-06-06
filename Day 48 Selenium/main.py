@@ -7,12 +7,12 @@ chrome_options = webdriver.ChromeOptions()
 chrome_options.add_experimental_option("detach", True)
 
 driver = webdriver.Chrome(options=chrome_options)
-# driver.get("https://appbrewery.github.io/instant_pot/")
+driver.get("https://appbrewery.github.io/instant_pot/")
 driver.get("https://www.python.org/")
 
-# price_dollar = driver.find_element(By.CLASS_NAME, value="a-price-whole")
-# price_cents = driver.find_element(By.CLASS_NAME, value="a-price-fraction")
-# print(f"The Price is {price_dollar.text}.{price_cents.text}")
+price_dollar = driver.find_element(By.CLASS_NAME, value="a-price-whole")
+price_cents = driver.find_element(By.CLASS_NAME, value="a-price-fraction")
+print(f"The Price is {price_dollar.text}.{price_cents.text}")
 
 
 # for python org website 
@@ -32,7 +32,7 @@ print(using_xpath.text)
 
 
 
-# driver.close() # it closes the particular active tab
+driver.close() # it closes the particular active tab
 driver.quit() # it closes the entire browser
 # It totally depends upon you 👆
 
