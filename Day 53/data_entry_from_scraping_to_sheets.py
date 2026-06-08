@@ -9,7 +9,7 @@ FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSdAhL0nnw3Uvn8UazME27yRS8s3
 ZILLOW_WEBSITE_URL = 'https://appbrewery.github.io/Zillow-Clone/'
 
 headers = {
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "User-Agent": "my_user_agent",
     "Accept-Language": "en-GB,en-US;q=0.9,en;q=0.8"
 }
 
