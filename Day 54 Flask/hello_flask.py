@@ -3,10 +3,14 @@ from flask import Flask
 app = Flask(__name__)
 print(__name__) # ye batata hai kaun si current file run ho rhi hai
 
-@app.route('/')
-
+@app.route('/') # it is a decorator funciton
 def hello_world():
     return "Hello World!"
+
+@app.route('/bye')
+def bye():
+    return "Bye"
+
 if __name__ == "__main__":
     app.run()
     # app.run() likhne se jo hume environment variable bana ke likhna pad rha tha terminal pr usse hum
