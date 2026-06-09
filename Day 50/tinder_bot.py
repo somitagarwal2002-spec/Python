@@ -6,7 +6,7 @@ from selenium.webdriver.support import expected_conditions as ec
 from selenium.common.exceptions import ElementClickInterceptedException, NoSuchElementException
 import time
 
-MY_TINDOG_URL = "my_tindong_url"
+MY_TINDOG_URL = "https://app.100daysofpython.dev/services/tindog/u/P1QWmvKBqm-EpPIDpe2uzrckPsQh1_i1"
 MY_EMAIL = "somit@gmail.com"
 MY_PASSWORD = "somit@123"
 
