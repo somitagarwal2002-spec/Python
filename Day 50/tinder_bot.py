@@ -58,7 +58,7 @@ cookies_accept = WebDriverWait(driver, 10).until(
 )
 cookies_accept.click()
 
-for n in range(20):
+for n in range(100):
     time.sleep(1)
     try:
         like_button = driver.find_element(By.CLASS_NAME, value="btn-like")
