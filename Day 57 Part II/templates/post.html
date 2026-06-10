@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+<body>
+<div class="wrapper">
+    <div class="top">
+        <div class="title"><h1>My Blog</h1></div>
+           </div>
+        <div class="content">
+            <div class="card">
+            {% if number==1%}
+                <h1><b>{{blog1}}</b></h1>
+                <h2>{{blog1_sub}}</h2>
+                <p>{{blog1_b}}y</p>
+            {% endif %}
+            {% if number==2%}
+                <h1><b>{{blog2}}</b></h1>
+                <h2>{{blog2_sub}}</h2>
+                <p>{{blog2_b}}y</p>
+            {% endif %}
+            {% if number==3%}
+                <h1><b>{{blog3}}</b></h1>
+                <h2>{{blog3_sub}}</h2>
+                <p>{{blog3_b}}y</p>
+            {% endif %}
+
+            </div>
+
+    </div>
+</div>
+</body>
+<footer>
+    <p>Made with ♥️ in London.</p>
+</footer>
+</html>
