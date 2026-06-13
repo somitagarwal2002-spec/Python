@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Login</title>
+	</head>
+	<body>
+        <div class="container">
+		<h1>Login</h1>
+        <form method="POST" action="{{ url_for('login') }}" novalidate> <!--jb tk humne ye novalidate nhi lagaya tha tb tk ye chrome ke defalut validates use kr rha tha but jaise hi humne no validate likha hai ye humare validates use karega-->
+				{{ form.csrf_token }}
+				<p>
+				{{ form.email.label }} <br> {{ form.email(size=30) }} <!--size ka use input ki width ke liye use ho rha hai-->
+				{% for err in form.email.errors %}  
+				<span style="color:red">{{err}}</span>
+				{% endfor %}
+				</p>
+				<p>
+				{{ form.password.label }} <br> {{ form.password(size=30) }}
+				{% for err in form.password.errors %}
+				<span style="color:red">{{err}}</span>
+				{% endfor %}
+				</p>
+				{{ form.submit }}
+		</form>
+        </div>
+	</body>
+</html>
