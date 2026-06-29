@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Flask Master Template</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+        <div class="container">
+
+            <a class="navbar-brand" href="{{ url_for('home') }}">
+
+                Flask Blog
+
+            </a>
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+
+                    <a class="nav-link" href="{{ url_for('home') }}">
+
+                        Home
+
+                    </a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a class="nav-link" href="{{ url_for('about') }}">
+
+                        About
+
+                    </a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a class="nav-link" href="{{ url_for('contact') }}">
+
+                        Contact
+
+                    </a>
+
+                </li>
+
+                {% if current_user.is_authenticated %}
+
+                <li class="nav-item">
+
+                    <a class="nav-link" href="{{ url_for('logout') }}">
+
+                        Logout
+
+                    </a>
+
+                </li>
+
+                {% else %}
+
+                <li class="nav-item">
+
+                    <a class="nav-link" href="{{ url_for('login') }}">
+
+                        Login
+
+                    </a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a class="nav-link" href="{{ url_for('register') }}">
+
+                        Register
+
+                    </a>
+
+                </li>
+
+                {% endif %}
+
+            </ul>
+
+        </div>
+
+    </nav>
+
+    <!-- ================= FLASH MESSAGE ================= -->
+
+    <div class="container mt-3">
+
+        {% with messages = get_flashed_messages() %}
+
+        {% if messages %}
+
+        {% for message in messages %}
+
+        <div class="alert alert-success">
+
+            {{ message }}
+
+        </div>
+
+        {% endfor %}
+
+        {% endif %}
+
+        {% endwith %}
+
+    </div>
+
+    <!-- ================= BLOG POSTS ================= -->
+
+    <div class="container mt-5">
+
+        {% for post in posts %}
+
+        <div class="card mb-4">
+
+            <img src="{{ post.img_url }}" class="card-img-top">
+
+            <div class="card-body">
+
+                <h2>
+
+                    {{ post.title }}
+
+                </h2>
+
+                <h5>
+
+                    {{ post.subtitle }}
+
+                </h5>
+
+                <p>
+
+                    {{ post.body }}
+
+                </p>
+
+                <small>
+
+                    Author :
+
+                    {{ post.author.name }}
+
+                </small>
+
+                <br><br>
+
+                <a href="{{ url_for('show_post',
+               post_id=post.id) }}" class="btn btn-primary">
+
+                    Read More
+
+                </a>
+
+                {% if current_user.id == 1 %}
+
+                <a href="{{ url_for('edit_post',
+               post_id=post.id) }}" class="btn btn-warning">
+
+                    Edit
+
+                </a>
+
+                <a href="{{ url_for('delete_post',
+               post_id=post.id) }}" class="btn btn-danger">
+
+                    Delete
+
+                </a>
+
+                {% endif %}
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+    <!-- ================= CREATE POST ================= -->
+
+    <div class="container mt-5">
+
+        <form method="POST">
+
+            {{ form.hidden_tag() }}
+
+            {{ ckeditor.load() }}
+
+            {{ ckeditor.config(name='body') }}
+
+            <div class="mb-3">
+
+                {{ form.title.label }}
+
+                {{ form.title(class="form-control") }}
+
+            </div>
+
+            <div class="mb-3">
+
+                {{ form.subtitle.label }}
+
+                {{ form.subtitle(class="form-control") }}
+
+            </div>
+
+            <div class="mb-3">
+
+                {{ form.img_url.label }}
+
+                {{ form.img_url(class="form-control") }}
+
+            </div>
+
+            <div class="mb-3">
+
+                {{ form.body.label }}
+
+                {{ form.body() }}
+
+            </div>
+
+            <div class="mb-3">
+
+                {{ form.submit(class="btn btn-success") }}
+
+            </div>
+
+        </form>
+
+    </div>
+
+    <!-- ================= FORM ERRORS ================= -->
+
+    {% for error in form.email.errors %}
+
+    <p style="color:red;">
+
+        {{ error }}
+
+    </p>
+
+    {% endfor %}
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="text-center mt-5">
+
+        <hr>
+
+        <p>
+
+            Flask Master Template
+
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
