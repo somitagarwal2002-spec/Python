@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html><head><title>Dictionary API</title>
+<style>
+body{font-family:Arial;max-width:800px;margin:40px auto;background:#f4f4f4}
+.card{background:#fff;padding:20px;border-radius:10px}
+input{padding:10px;width:70%}button{padding:10px}
+</style></head><body>
+<div class="card">
+<h2>Dictionary Lookup</h2>
+<form method="POST">
+<input name="word" placeholder="Enter a word" value="{{word}}" required>
+<button>Search</button>
+</form>
+{% if result %}
+{% if result.error %}
+<p><b>{{result.error}}</b></p>
+{% else %}
+<h3>{{result.word}} {{result.phonetic}}</h3>
+{% for m in result.meanings %}
+<h4>{{m.part}}</h4>
+<ul>{% for d in m.defs %}<li>{{d}}</li>{% endfor %}</ul>
+{% endfor %}
+{% endif %}
+{% endif %}
+</div></body></html>
