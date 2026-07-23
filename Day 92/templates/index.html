@@ -1,23 +1,40 @@
-<!DOCTYPE html>
-<html><head><title>Color Palette Extractor</title>
-<style>
-body{font-family:Arial;margin:40px;background:#f4f4f4}
-.box{display:flex;align-items:center;margin:8px 0}
-.swatch{width:60px;height:40px;border:1px solid #000;margin-right:12px}
-</style></head>
-<body>
-<h2>Top 10 Image Colors</h2>
-<form method="POST" enctype="multipart/form-data">
-<input type="file" name="image" required>
-<button>Upload</button>
-</form>
-{% if image %}
-<img src="{{url_for('static',filename=image)}}" width="300"><hr>
-{% for c in colors %}
-<div class="box">
-<div class="swatch" style="background:{{c.hex}}"></div>
-<b>{{c.hex}}</b>&nbsp;&nbsp;RGB {{c.rgb}} ({{c.count}})
-</div>
-{% endfor %}
-{% endif %}
-</body></html>
+<!doctype html>
+<html>
+  <head>
+    <title>Color Palette Extractor</title>
+    <style>
+      body {
+        font-family: Arial;
+        margin: 40px;
+        background: #f4f4f4;
+      }
+      .box {
+        display: flex;
+        align-items: center;
+        margin: 8px 0;
+      }
+      .swatch {
+        width: 60px;
+        height: 40px;
+        border: 1px solid #000;
+        margin-right: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Top 10 Image Colors</h2>
+    <form method="POST" enctype="multipart/form-data">
+      <input type="file" name="image" required />
+      <button>Upload</button>
+    </form>
+    {% if image %}
+    <img src="{{url_for('static',filename=image)}}" width="300" />
+    <hr />
+    {% for c in colors %}
+    <div class="box">
+      <div class="swatch" style="background:{{c.hex}}"></div>
+      <b>{{c.hex}}</b>&nbsp;&nbsp;RGB {{c.rgb}} ({{c.count}})
+    </div>
+    {% endfor %} {% endif %}
+  </body>
+</html>
