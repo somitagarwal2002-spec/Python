@@ -1,0 +1,19 @@
+{% extends 'base.html' %}{% block content %}
+<h1 class="mb-4">Featured Cafes</h1>
+<div class="row">
+  {% for cafe in cafes %}
+  <div class="col-md-4">
+    <div class="card mb-4">
+      <img src="{{ cafe.img_url }}" class="card-img-top" />
+      <div class="card-body">
+        <h5>{{ cafe.name }}</h5>
+        <p>{{ cafe.location }}</p>
+        <a class="btn btn-primary" href='{{ url_for("cafe", cafe_id=cafe.id) }}'
+          >View</a
+        >
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

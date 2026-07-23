@@ -1,0 +1,11 @@
+{% extends 'base.html' %}{% block content %}
+<h2>Edit Cafe</h2>
+<form method="POST">
+  {{ form.hidden_tag() }}{% for field in form if field.name not in
+  ['csrf_token','submit'] %}
+  <div class="mb-3">
+    {{ field.label(class='form-label') }}{{ field(class='form-control') }}
+  </div>
+  {% endfor %}{{ form.submit(class='btn btn-primary') }}
+</form>
+{% endblock %}

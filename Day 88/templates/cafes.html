@@ -1,0 +1,25 @@
+{% extends 'base.html' %}{% block content %}
+<h2>All Cafes</h2>
+<table class="table table-striped">
+  <tr>
+    <th>Name</th>
+    <th>Location</th>
+    <th>WiFi</th>
+    <th></th>
+  </tr>
+  {% for cafe in cafes %}
+  <tr>
+    <td>{{ cafe.name }}</td>
+    <td>{{ cafe.location }}</td>
+    <td>{{ 'Yes' if cafe.has_wifi else 'No' }}</td>
+    <td>
+      <a
+        href='{{ url_for("cafe", cafe_id=cafe.id) }}'
+        class="btn btn-sm btn-primary"
+        >Open</a
+      >
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}
