@@ -1,0 +1,10 @@
+<!doctype html><html><head><title>Flask Shop</title></head><body>
+<h1>Mini eCommerce Store</h1>
+{% for p in products %}
+<div style="border:1px solid #ccc;padding:10px;margin:10px;">
+<h3>{{p.name}}</h3>
+<p>${{p.price}}</p>
+<a href="{{url_for('checkout',pid=p.id)}}">Buy Now</a>
+</div>
+{% endfor %}
+</body></html>
